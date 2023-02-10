@@ -1,0 +1,428 @@
+﻿@model ECard.ViewModel.HomeViewModel
+@using ECard.Models
+@{
+    var config = (ConfigSite)HttpContext.Current.Application["ConfigSite"];
+    ViewBag.Title = config.Title;
+    ViewBag.Description = config.Description;
+    ViewBag.Canonical = Request.Url?.GetLeftPart(UriPartial.Authority) + Url.Action("Index");
+
+    var fb = Model.Banners.FirstOrDefault(b => b.Image != null && b.GroupId == 1);
+    if (fb != null)
+    {
+        ViewBag.ImageShare = Request.Url?.GetLeftPart(UriPartial.Authority) + Path.Combine("/images/banners/", fb.Image);
+    }
+}
+
+<section class="introduce">
+    <div class="container">
+        <div class="content">
+            <h1 class="text-center">
+                ECard<br />
+                Giải pháp <span>chuyển đổi số</span> business card<br />
+                và <span>kết nối cơ hội</span> hợp tác hiệu quả nhất
+            </h1>
+            <h5>
+                Chỉ với ít phút bạn có ngay một business card online và QR code để tăng cơ hội hợp tác lên gấp 5 lần
+            </h5>
+            <div class="ecard-feature-image">
+                <img src="~/Content/images/img-main/ecard-1.png" alt="Ảnh giới thiệu" />
+            </div>
+        </div>
+    </div>
+</section>
+<section class="partner">
+    <div class="container">
+        <div class="title">Đối tác của chúng tôi</div>
+        <div class="partner-list">
+            <a href="#" class="partner-item">
+                <img src="~/Content/images/img-main/logo-colour-onetrust.png" />
+            </a>
+            <a href="#" class="partner-item">
+                <img src="~/Content/images/img-main/fpt.png" />
+            </a>
+            <a href="#" class="partner-item">
+                <img src="~/Content/images/img-main/NetSkope-Logo.png" />
+            </a>
+            <a href="#" class="partner-item">
+                <img src="~/Content/images/img-main/logo-lalamove.png" />
+            </a>
+            <a href="#" class="partner-item">
+                <img src="~/Content/images/img-main/logo-openai.png" />
+            </a>
+            <a href="#" class="partner-item">
+                <img src="~/Content/images/img-main/logo-openai.png" />
+            </a>
+        </div>
+    </div>
+</section>
+<section class="statistic">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="statistic-item">
+                    <div class="statistic-number">
+                        <span>2000</span>
+                    </div>
+                    <div class="statistic-text">Khách hàng cá nhân</div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="statistic-item">
+                    <div class="statistic-number">
+                        <span>20</span>+
+                    </div>
+                    <div class="statistic-text">Khách hàng tổ chức</div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="statistic-item">
+                    <div class="statistic-number">
+                        <span>97</span>%
+                    </div>
+                    <div class="statistic-text">Khách hàng hài lòng</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="card-features">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-2"></div>
+            <div class="col-lg-4 col-md-6">
+                <div class="card-features-item">
+                    <div class="card-features-icon">
+                        <img src="~/Content/images/img-main/card-features-01.png" />
+                    </div>
+                    <div class="card-features-title">
+                        Kết nối <span>1 chạm</span>
+                    </div>
+                    <div class="card-features-text">
+                        Lưu nhanh thông tin, kết nối nhanh chóng thông qua Zalo, WhatsApp,... chỉ với một chạm.
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="card-features-item">
+                    <div class="card-features-icon">
+                        <img src="~/Content/images/img-main/card-features-02.png" />
+                    </div>
+                    <div class="card-features-title">
+                        CRM <span>cá nhân</span>
+                    </div>
+                    <div class="card-features-text">
+                        Hệ thống quản lý kết nối dành riêng cho người sử dụng với nhiều tính năng ưu việt.
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2"></div>
+            <div class="col-lg-2"></div>
+            <div class="col-lg-4 col-md-6">
+                <div class="card-features-item">
+                    <div class="card-features-icon">
+                        <img src="~/Content/images/img-main/card-features-03.png" />
+                    </div>
+                    <div class="card-features-title">
+                        Xây dựng <span>thương hiệu</span>
+                    </div>
+                    <div class="card-features-text">
+                        Tạo ấn tượng với danh thiếp thông minh được cá nhân hóa.
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="card-features-item">
+                    <div class="card-features-icon">
+                        <img src="~/Content/images/img-main/card-features-04.png" />
+                    </div>
+                    <div class="card-features-title">
+                        Đề xuất <span>kết nối phù hợp</span>
+                    </div>
+                    <div class="card-features-text">
+                        Trí Tuệ Nhân tạo đề xuất kết nối mới hằng tuần giúp mở rộng các kênh đối tác tiềm năng.
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2"></div>
+        </div>
+    </div>
+</section>
+<section class="card-features" style="margin-top: 40px;">
+    <div class="container">
+        <div class="title">tính năng quản trị</div>
+        <div class="row">
+            <div class="col-lg-4 col-md-6">
+                <div class="card-features-item">
+                    <div class="card-features-icon">
+                        <img src="~/Content/images/img-main/card-features-03.png" />
+                    </div>
+                    <div class="card-features-title">
+                        quản lý <span>dữ liệu</span>
+                    </div>
+                    <div class="card-features-text">
+                        Thống kê danh thiếp, tổng lịch hẹn của cá nhân và các thành viên theo biểu đồ trực quan.
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="card-features-item">
+                    <div class="card-features-icon">
+                        <img src="~/Content/images/img-main/card-features-03.png" />
+                    </div>
+                    <div class="card-features-title">
+                        quản lý <span>kết nối</span>
+                    </div>
+                    <div class="card-features-text">
+                        Thống kê danh thiếp, tổng lịch hẹn của cá nhân và các thành viên theo biểu đồ trực quan.
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="card-features-item">
+                    <div class="card-features-icon">
+                        <img src="~/Content/images/img-main/card-features-03.png" />
+                    </div>
+                    <div class="card-features-title">
+                        quản lý <span>hiệu suất</span>
+                    </div>
+                    <div class="card-features-text">
+                        Quản lý thông tin danh thiếp, theo dõi các chỉ số phân tích, đo lường của từng thành viên trong hội nhóm.
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="card-features-item">
+                    <div class="card-features-icon">
+                        <img src="~/Content/images/img-main/card-features-03.png" />
+                    </div>
+                    <div class="card-features-title">
+                        quản lý <span>sự kiện</span>
+                    </div>
+                    <div class="card-features-text">
+                        Tạo sự kiện và quản lý dữ liệu người tham dự.
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="card-features-item">
+                    <div class="card-features-icon">
+                        <img src="~/Content/images/img-main/card-features-03.png" />
+                    </div>
+                    <div class="card-features-title">
+                        danh bạ <span>thông minh</span>
+                    </div>
+                    <div class="card-features-text">
+                        Thống kê dữ liệu khách hàng khi kết nối.
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="card-features-item">
+                    <div class="card-features-icon">
+                        <img src="~/Content/images/img-main/card-features-03.png" />
+                    </div>
+                    <div class="card-features-title">
+                        đề xuất kết nối <span>bằng công nghệ AI</span>
+                    </div>
+                    <div class="card-features-text">
+                        Tự động gợi ý kết nối phù hợp với nhu cầu tìm kiếm nguồn hàng hoặc khách hàng theo tuần.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card-features-bottom"></div>
+</section>
+<section class="card-features" style="margin-top: 40px;">
+    <div class="container">
+        <div class="title">dòng sản phẩm thẻ</div>
+        <div class="row">
+            <div class="col-lg-3 col-md-6">
+                <div class="card-features-item product">
+                    <div class="card-features-icon">
+                        <img src="~/Content/images/img-main/card-01.png" />
+                    </div>
+                    <div class="card-features-title vip">
+                        Thẻ đẳng cấp
+                    </div>
+                    <div class="card-features-text">
+                        Thiết kế theo yêu cầu riêng của Hiệp hội, Tổ chức, Hội nhóm, CLB hoặc các cá nhân muốn tăng nhận diện thương hiệu.
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="card-features-item product">
+                    <div class="card-features-icon">
+                        <img src="~/Content/images/img-main/card-02.png" />
+                    </div>
+                    <div class="card-features-title luxury">
+                        Thẻ sang trọng
+                    </div>
+                    <div class="card-features-text">
+                        Lựa chọn mẫu thẻ từ thư viện cao cấp. Có thể chỉnh sửa theo tên, màu sắc doanh nghiệp và hình dạng mã QR.
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="card-features-item product">
+                    <div class="card-features-icon">
+                        <img src="~/Content/images/img-main/card-03.png" />
+                    </div>
+                    <div class="card-features-title brand-name">
+                        Thẻ nhân hiệu
+                    </div>
+                    <div class="card-features-text">
+                        Lựa chọn mẫu thẻ từ thư viện. Có thể chỉnh sửa theo tên cá nhân và doanh nghiệp.
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="card-features-item product">
+                    <div class="card-features-icon">
+                        <img src="~/Content/images/img-main/card-04.png" />
+                    </div>
+                    <div class="card-features-title basic">
+                        thẻ cơ bản
+                    </div>
+                    <div class="card-features-text">
+                        Mẫu thẻ mặc định, tiết kiệm thời gian thiết kế, nhận hàng nhanh chóng.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-3">
+            <a href="#" class="btn-main">Xem bộ sưu tập</a>
+        </div>
+    </div>
+</section>
+<section class="pricing">
+    <div class="container">
+        <div class="title">bảng giá PHẦN MỀM</div>
+        <div class="text">
+            Sử dụng phần mềm riêng lẻ hoặc dùng chung với thẻ để đạt được kết quả tối ưu nhất.<br />
+            (*) Phần mềm dùng trong 12 tháng.<br />
+            (**) Gói Team+ chỉ áp dụng cho tối thiểu 5 người dùng.
+        </div>
+        <img src="~/Content/images/img-main/pricing.png" />
+    </div>
+</section>
+<section class="card-features" style="margin-top: 40px;">
+    <div class="container">
+        <div class="title mb-3">Hướng dẫn sử dụng</div>
+        <div class="row">
+            <div class="col-lg-2"></div>
+            <div class="col-lg-8">
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/z5gvayhhag8?rel=0" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="col-lg-2"></div>
+        </div>
+    </div>
+    <div class="card-features-bottom"></div>
+</section>
+<section class="reassion">
+    <div class="container">
+        <div class="title">Lý do nên chọn ECard</div>
+        <div class="row">
+            <div class="col-lg-2"></div>
+            <div class="col-lg-8">
+                <div class="text">Trong thời đại công nghệ và chuyển đổi số phát triển không ngừng, chúng tôi nhận thấy rằng việc sử dụng danh thiếp truyền thống đã trở nên lỗi thời, kém hiệu quả và kém linh hoạt. Vì vậy, chúng tôi mong muốn mang đến một giải pháp tiến bộ hơn cho việc kết nối trên toàn cầu thông qua sản phẩm danh thiếp điện tử.</div>
+            </div>
+            <div class="col-lg-2"></div>
+        </div>
+    </div>
+</section>
+<section class="question">
+    <div class="container">
+        <div class="title">Câu hỏi thường gặp</div>
+        <div class="row">
+            <div class="col-lg-2"></div>
+            <div class="col-lg-8">
+                <div class="question-item">
+                    <div class="question-item-title">Bảo mật thông tin</div>
+                    <div class="question-item-text">Chúng tôi tuyệt đối đề cao bảo mật thông tin người dùng. Thông tin của bạn sẽ không bị ảnh hưởng vì sử dụng thẻ chúng tôi không bắt buộc đăng nhập vào các liên kết riêng tư của bạn.</div>
+                </div>
+                <div class="question-item">
+                    <div class="question-item-title">Tư vấn về các loại thẻ</div>
+                    <div class="question-item-text">Vui lòng liên hệ trực tiếp qua Facebook fanpage tại ecard hoặc hotline: +84 912 677 731 để được hỗ trợ nhanh nhất.</div>
+                </div>
+                <div class="question-item">
+                    <div class="question-item-title">Thời gian bảo hành sản phẩm:</div>
+                    <div class="question-item-text">
+                        InCard đổi mới 100% sản phẩm bất kì khi sản phẩm có lỗi từ nhà sản xuất (màu in không đúng với thiết kế, mã QR mờ, sai thông tin khách hàng, tính năng NFC lỗi, chi tiết tại Chính sách đổi trả). Các trường hợp sự cố phát sinh từ phía khách hàng (làm gãy, làm hỏng thẻ,...), khách hàng sẽ hoàn toàn chịu trách nhiệm. Thời hạn bảo hành thẻ tùy thuộc vào loại thẻ khách hàng đang sử dụng. Đối với dòng thẻ Sang Trọng (Lux) và thẻ Đẳng Cấp (VIP) sẽ được InCard bảo hành sản phẩm trong vòng 1 năm kể từ ngày kích hoạt sản phẩm.
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2"></div>
+        </div>
+    </div>
+</section>
+<section class="feedback">
+    <div class="container">
+        <div class="title">nhận xét của khách hàng</div>
+        <div class="row">
+            <div class="col-lg-1"></div>
+            <div class="col-lg-10">
+                <div class="testimonial-list">
+                    <div class="testimonial-item">
+                        <div class="avatar">
+                            <img src="~/Content/images/img-main/testimonial-01.jpg" />
+                        </div>
+                        <div class="testimonial-box">
+                            <div class="testimonial-name">Ms. Trang Phạm</div>
+                            <div class="testimonial-position">COO Remedi</div>
+                            <div class="testimonial-text">
+                                Thẻ chuyên nghiệp và tiện lợi cho các hoạt động giao thương. Một sản phẩm không thể thiếu cho các doanh nhân hay đội ngũ thường xuyên gặp gỡ khách hàng.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-item">
+                        <div class="avatar">
+                            <img src="~/Content/images/img-main/testimonial-02.jpg" />
+                        </div>
+                        <div class="testimonial-box">
+                            <div class="testimonial-name">Mr. Andrew Trần</div>
+                            <div class="testimonial-position">CEO Shapez</div>
+                            <div class="testimonial-text">
+                                Thẻ đẹp và in đúng theo yêu cầu của thương hiệu. Tôi sử dụng chung với phần mềm CRM có thể quản lý được các thành viên trong Câu lạc bộ doanh nhân của tôi.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-item">
+                        <div class="avatar">
+                            <img src="~/Content/images/img-main/testimonial-03.jpg" />
+                        </div>
+                        <div class="testimonial-box">
+                            <div class="testimonial-name">Mr. Tuấn Nguyễn</div>
+                            <div class="testimonial-position">CEO & Founder Vietco</div>
+                            <div class="testimonial-text">
+                                Đội ngũ hỗ trợ tận tâm và nhanh chóng. Từ khi dùng ECard, ngoài việc tiện lợi trong giao thương và networking, tôi còn quản lý được các lịch hẹn với đối tác.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-item">
+                        <div class="avatar">
+                            <img src="~/Content/images/img-main/testimonial-03.jpg" />
+                        </div>
+                        <div class="testimonial-box">
+                            <div class="testimonial-name">Mr. Tuấn Nguyễn</div>
+                            <div class="testimonial-position">CEO & Founder Vietco</div>
+                            <div class="testimonial-text">
+                                Đội ngũ hỗ trợ tận tâm và nhanh chóng. Từ khi dùng ECard, ngoài việc tiện lợi trong giao thương và networking, tôi còn quản lý được các lịch hẹn với đối tác.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-1"></div>
+        </div>
+    </div>
+    <div class="card-features-bottom"></div>
+</section>
+
+@section scripts {
+    <script>
+        homeJs();
+    </script>
+}

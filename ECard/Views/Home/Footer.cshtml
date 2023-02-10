@@ -1,0 +1,106 @@
+﻿@model ECard.ViewModel.FooterViewModel
+@using ECard.Models
+@{ 
+    var config = (ConfigSite)HttpContext.Current.Application["ConfigSite"];
+}
+
+<section class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-6 mb-lg-0 mb-3">
+                <div class="logo">
+                    <img src="~/Content/images/img-main/logo-vceo-321.png" />
+                </div>
+                <ul class="ul-reset info-footer">
+                    <li>
+                        <i class="fas fa-map-marker-alt"></i>
+                        Địa chỉ: 238 Đường 3/2, Phường 12, Quận 10, TP.HCM
+                    </li>
+                    <li>
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:">Email:info@vceo.vn</a>
+                    </li>
+                    <li>
+                        <i class="fas fa-mobile-android-alt"></i>
+                        Hotline: +84 912 677 731
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-2 col-md-6 mb-lg-0 mb-3">
+                <div class="title">ECard</div>
+                <ul class="ul-reset footer-menu">
+                    <li>
+                        <a href="#">Về Chúng Tôi</a>
+                    </li>
+                    <li>
+                        <a href="#">Tính Năng</a>
+                    </li>
+                    <li>
+                        <a href="#">Sản Phẩm Thẻ</a>
+                    </li>
+                    <li>
+                        <a href="#">Sản Phẩm Phần Mềm</a>
+                    </li>
+                    <li>
+                        <a href="#">Bảng Giá</a>
+                    </li>
+                    <li>
+                        <a href="#">Blog</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="title">Hỗ trợ</div>
+                <ul class="ul-reset footer-menu">
+                    <li>
+                        <a href="#">Hướng dẫn mua hàng</a>
+                    </li>
+                    <li>
+                        <a href="#">Chính sách vận chuyển</a>
+                    </li>
+                    <li>
+                        <a href="#">Chính sách bảo hành và đổi trả</a>
+                    </li>
+                    <li>
+                        <a href="#">Chính sách bảo mật thông tin</a>
+                    </li>
+                    <li>
+                        <a href="#">Điều khoản điều kiện</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="title">Theo Dõi & Mua Hàng</div>
+                <div class="social">
+                    <a href="#">
+                        <img src="~/Content/images/img-main/icon-fb.jpg" />
+                    </a>
+                    <a href="#">
+                        <img src="~/Content/images/img-main/icon-shoppee.jpg" />
+                    </a>
+                    <a href="#">
+                        <img src="~/Content/images/img-main/icon-lazada.jpg" />
+                    </a>
+                    <a href="#">
+                        <img src="~/Content/images/img-main/icon-youtube.jpg" />
+                    </a>
+                    <a href="#">
+                        <img src="~/Content/images/img-main/icon-instagram.jpg" />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="text-left">Copyright ©2023, All rights reserved</div>
+            </div>
+            <div class="col-lg-6">
+                <div class="text-right">Privacy Policy</div>
+            </div>
+        </div>
+    </div>
+</section>

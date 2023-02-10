@@ -1,0 +1,112 @@
+﻿@model ECard.ViewModel.HeaderViewModel
+@using ECard.Models
+@{
+    var config = (ConfigSite)HttpContext.Current.Application["ConfigSite"];
+}
+
+<section class="header">
+    <div class="container">
+        <div class="row">
+            <div class="col-3">
+                <a href="@Url.Action("Index")" class="logo">
+                    <img src="~/Content/images/img-main/logo-vceo-321.png" alt="Logo" />
+                </a>
+            </div>
+            <div class="col-9 d-flex justify-content-end align-items-center">
+                <ul class="ul-reset nav">
+                    <li>
+                        <a href="#">
+                            Overview
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Pricing
+                        </a>
+                    </li>
+                    <li>
+                        <a href="@Url.Action("Contact")">
+                            Contact
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Hotline: 0912677731
+                        </a>
+                    </li>
+                    <li class="try-btn">
+                        <a href="#">
+                            <i class="fal fa-user"></i>
+                            Đăng nhập
+                        </a>
+                    </li>
+                    <li class="try-btn btn-bg-color">
+                        <a href="#">
+                            Đăng ký
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="header-mb">
+    <div class="container">
+        <div class="row">
+            <div class="col-6 d-flex align-items-center">
+                <a href="@Url.Action("Index")" class="logo">
+                    <img src="~/Content/images/img-main/logo-vceo-321.png" />
+                </a>
+            </div>
+            <div class="col-6 d-flex justify-content-end align-items-center">
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="menu-mb">
+        <div class="container">
+            <div class="row py-3">
+                <div class="col-6 d-flex align-items-center">
+                    <a href="@Url.Action("Index")" class="logo">
+                        <img src="~/Content/images/img-main/logo-vceo-321.png" />
+                    </a>
+                </div>
+                <div class="col-6 d-flex justify-content-end align-items-center">
+                    <div class="close">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <ul class="ul-reset nav-mb">
+            <li>
+                <a href="#">Overview</a>
+            </li>
+            <li>
+                <a href="#">Pricing</a>
+            </li>
+            <li>
+                <a href="#">Contact</a>
+            </li>
+            <li>
+                <a href="#">Hotline: 0912677731</a>
+            </li>
+            <li class="try-btn">
+                <a href="#">
+                    <i class="fal fa-user"></i>
+                    Đăng nhập
+                </a>
+            </li>
+            <li class="try-btn btn-bg-color">
+                <a href="#">
+                    Đăng ký
+                </a>
+            </li>
+        </ul>
+    </div>
+</section>
